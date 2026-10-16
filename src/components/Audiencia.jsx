@@ -1,3 +1,4 @@
+import { teoriaComoTexto } from '../lib/teoria.js';
 import { useState } from 'react';
 import { DEMO_CONTRA } from '../data/caso.js';
 import { evaluarPregunta, responderTestigo, detectarContradiccion } from '../lib/servicios.js';
@@ -28,7 +29,7 @@ export default function Audiencia({ ajustes, testigos, documentos, teoria }) {
     setPregunta('');
     try {
       const [semaforo, respuesta] = await Promise.all([
-        evaluarPregunta({ ajustes, pregunta: q, modo, contexto: teoria }),
+        evaluarPregunta({ ajustes, pregunta: q, modo, contexto: teoriaComoTexto(teoria, testigos) }),
         responderTestigo({ ajustes, testigo, historial: turnos.filter((x) => x.respuesta), pregunta: q }),
       ]);
       setTurnos((t) => t.map((x) => (x.id === id ? { ...x, semaforo, respuesta } : x)));

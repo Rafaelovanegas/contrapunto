@@ -220,3 +220,27 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-
   h2 { font-size: 1.45rem; }
   .marca__producto { font-size: 1.3rem; }
 }
+
+/* Teoría del caso */
+.lema { font-family: Georgia, serif; font-size: 1.15rem; color: var(--oro-claro); }
+.acciones-ia { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.campo--doble { flex: 2 1 320px; }
+.campo--chico { flex: 0 1 140px; }
+.boton--chico { min-height: 40px; padding: 6px 14px; font-size: 0.85rem; }
+.tarjeta { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.tarjeta--acreditada { border-left: 4px solid var(--ok); }
+.tarjeta--debil { border-left: 4px solid var(--mal); }
+.tarjeta--pendiente { border-left: 4px solid var(--borde-fuerte); }
+.tarjeta--linea { border-left: 4px solid var(--oro); }
+ol.tarjetas { list-style: none; }
+.misiones { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.misiones > li { background: var(--panel2); border-radius: 8px; padding: 10px 12px; margin: 0; }
+.estres { border: 2px solid var(--mal); border-radius: 12px; background: var(--alerta-fondo); padding: 18px 20px; margin: 16px 0; display: flex; flex-direction: column; gap: 12px; }
+.estres h3 { margin: 0; }
+.estres__lista { margin: 0; padding-left: 1.4rem; display: flex; flex-direction: column; gap: 14px; }
+.estres__ataque { display: flex; flex-direction: column; gap: 4px; }
+.estres__punto { font-weight: 700; }
+.insignia { display: inline-block; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--borde-fuerte); margin-right: 6px; vertical-align: middle; }
+.estres__ataque--alta .insignia { border-color: var(--mal); color: var(--mal); }
+.estres__ataque--media .insignia { border-color: var(--oro); color: var(--oro-claro); }
+.estres__ataque--baja .insignia { color: var(--tenue); }

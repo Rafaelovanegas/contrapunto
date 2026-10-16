@@ -68,7 +68,33 @@ export const DOCUMENTOS_INICIALES = [
   { id: 'doc-lucia', titulo: 'Entrevista de Lucía Hernández (ficticia)', tipo: 'Entrevista', testigoId: 'lucia', texto: ENTREVISTA_LUCIA, origen: 'precargado' },
 ];
 
-export const TEORIA_DEL_CASO = 'Defensa de Julián Mora Arellano, acusado de portación de arma de fuego de uso exclusivo (pistola calibre .45). Teoría: la revisión carecía de motivo objetivo, el agente no pudo percibir lo que afirma y su versión en juicio contradice su propio informe; la vendedora presencial no vio arma ni mochila.';
+// Teoría del caso de la defensa (hipótesis didáctica). Los elementos del tipo se presentan como guía
+// de estudio y deben verificarse en la ley y la jurisprudencia aplicables.
+export const TEORIA_INICIAL = {
+  parte: 'defensa',
+  cliente: 'Julián Mora Arellano',
+  lema: 'Un policía que no sabe dónde encontró el arma no puede probar que alguien la portaba.',
+  relato: 'La noche del 14 de marzo de 2026, Julián caminaba por la calle Laureles, en Colima, sin mochila y con las manos vacías. Dos policías estatales bajaron de su patrulla, lo pusieron contra la pared y lo revisaron sin que hubiera un motivo objetivo. La única persona que presenció la escena, la vendedora de elotes de la esquina, no vio ningún arma. La versión policial cambia cada vez que se cuenta: la hora, quién revisó, dónde estaba el arma y por qué lo detuvieron.',
+  delito: 'Portación de arma de fuego de uso exclusivo del Ejército, Armada y Fuerza Aérea (pistola calibre .45), art. 83, fracción II, en relación con el art. 11, inciso b), de la Ley Federal de Armas de Fuego y Explosivos.',
+  elementos: [
+    { id: 'e1', elemento: 'Que el acusado portaba el arma (la llevaba consigo, a su alcance)', postura: 'atacar', comentario: 'La ubicación del arma es contradictoria (cintura vs. mochila) y nadie más la vio en su poder.' },
+    { id: 'e2', elemento: 'Que el arma es de uso exclusivo (calibre .45, art. 11, inciso b, LFAFE)', postura: 'no-controvertir', comentario: 'Pericialmente difícil de discutir; concentrar la defensa en los otros elementos.' },
+    { id: 'e3', elemento: 'Que carecía de licencia o permiso', postura: 'reconocer', comentario: 'No hay licencia: no gastar credibilidad en este punto.' },
+    { id: 'e4', elemento: 'Licitud de la detención y de la prueba (arts. 16 y 20, A-IX, CPEUM)', postura: 'atacar', comentario: 'Revisión sin motivo objetivo, confesión sin defensor y registro tardío de la detención.' },
+  ],
+  proposiciones: [
+    { id: 'p1', texto: 'Julián caminaba sin mochila y con las manos vacías.', elementoId: 'e1', prueba: 'Testimonio de Lucía Hernández; el parte no lista ninguna mochila.', estado: 'pendiente' },
+    { id: 'p2', texto: 'El agente no podía ver un arma a 30 metros, de noche, con alumbrado deficiente.', elementoId: 'e4', prueba: 'Contrainterrogatorio del agente Ramírez; su propio parte describe el alumbrado deficiente.', estado: 'pendiente' },
+    { id: 'p3', texto: 'El motivo de la revisión fue el supuesto nerviosismo, no un arma visible.', elementoId: 'e4', prueba: 'Parte informativo, confrontado con el art. 376 CNPP.', estado: 'pendiente' },
+    { id: 'p4', texto: 'La versión del agente sobre dónde estaba el arma cambió.', elementoId: 'e1', prueba: 'Parte (fajada a la cintura) frente a declaración en juicio (mochila).', estado: 'pendiente' },
+    { id: 'p5', texto: 'La supuesta confesión ocurrió antes de la lectura de derechos y sin defensor.', elementoId: 'e4', prueba: 'Horas asentadas en el parte: manifestación 21:10, lectura de derechos 21:15.', estado: 'pendiente' },
+  ],
+  lineas: [
+    { id: 'l1', titulo: 'La revisión fue ilícita', fundamento: 'Art. 16 CPEUM (acto de molestia sin motivo) y art. 20, A-IX (nulidad de la prueba obtenida con violación de derechos).', prioridad: 1, mision: [{ testigoId: 'ramirez', tipo: 'contra', objetivo: 'Fijar que el motivo escrito fue el nerviosismo y que nunca vio el arma antes de revisar.' }] },
+    { id: 'l2', titulo: 'El agente no es creíble', fundamento: 'Contradicciones con su registro previo (art. 376 CNPP) y capacidad de percepción.', prioridad: 2, mision: [{ testigoId: 'ramirez', tipo: 'contra', objetivo: 'Evidenciar contradicciones sobre hora, quién revisó y ubicación del arma.' }] },
+    { id: 'l3', titulo: 'Nadie más vio el arma', fundamento: 'Carga de la prueba en la acusación (art. 20, A-V CPEUM); duda razonable.', prioridad: 3, mision: [{ testigoId: 'lucia', tipo: 'directo', objetivo: 'Acreditar que vio la escena de cerca, que Julián no traía mochila y que no vio arma.' }] },
+  ],
+};
 
 // ===== Modo demostración sin conexión: respuestas grabadas y validadas =====
 export const DEMO_CONTRA = [

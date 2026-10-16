@@ -94,6 +94,29 @@ export function validarPreparacion(o) {
   return null;
 }
 
+export function validarTeoria(o) {
+  if (!o.relato || typeof o.relato !== 'string') return 'falta el relato';
+  if (!Array.isArray(o.elementos) || !o.elementos.length) return 'faltan elementos';
+  for (const e of o.elementos) {
+    if (!e.elemento) return 'elemento vacío';
+    if (!['atacar', 'reconocer', 'no-controvertir'].includes(e.postura)) return 'postura fuera de catálogo';
+  }
+  if (!Array.isArray(o.proposiciones)) return 'faltan proposiciones';
+  if (!Array.isArray(o.lineas) || !o.lineas.length) return 'faltan líneas de defensa';
+  for (const l of o.lineas) if (!l.titulo) return 'línea sin título';
+  return null;
+}
+
+export function validarEstres(o) {
+  if (!o.resumen) return 'falta el resumen';
+  if (!Array.isArray(o.ataques) || !o.ataques.length) return 'sin ataques';
+  for (const a of o.ataques) {
+    if (!a.punto || !a.ataque || !a.como_cubrirla) return 'ataque incompleto';
+    if (!['alta', 'media', 'baja'].includes(a.gravedad)) return 'gravedad fuera de catálogo';
+  }
+  return null;
+}
+
 export function validarExtraccion(o) {
   if (typeof o.texto !== 'string' || o.texto.trim().length < 20) return 'texto extraído vacío';
   return null;

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { MODELO_POR_DEFECTO } from './config.js';
 import { leer, guardar } from './lib/storage.js';
-import { DOCUMENTOS_INICIALES, TESTIGOS_INICIALES, TEORIA_DEL_CASO } from './data/caso.js';
+import { DOCUMENTOS_INICIALES, TESTIGOS_INICIALES, TEORIA_INICIAL } from './data/caso.js';
+import { normalizarTeoria } from './lib/teoria.js';
+import TeoriaCaso from './components/TeoriaCaso.jsx';
 import Audiencia from './components/Audiencia.jsx';
 import Expediente from './components/Expediente.jsx';
 import Preparacion from './components/Preparacion.jsx';
@@ -21,6 +23,7 @@ const AJUSTES_INICIALES = {
 };
 
 const PESTANAS = [
+  { id: 'teoria', nombre: 'Teoría del caso' },
   { id: 'audiencia', nombre: 'Audiencia' },
   { id: 'expediente', nombre: 'Expediente' },
   { id: 'preparacion', nombre: 'Preparación' },
@@ -39,7 +42,9 @@ export default function App() {
   const [ajustes, setAjustes] = usePersistente('ajustes', AJUSTES_INICIALES);
   const [testigos, setTestigos] = usePersistente('testigos', TESTIGOS_INICIALES);
   const [documentos, setDocumentos] = usePersistente('documentos', DOCUMENTOS_INICIALES);
-  const [teoria, setTeoria] = usePersistente('teoria', TEORIA_DEL_CASO);
+  const [teoriaGuardada, setTeoria] = usePersistente('teoria', TEORIA_INICIAL);
+  const teoria = normalizarTeoria(teoriaGuardada, TEORIA_INICIAL);
+  const [lineaActiva, setLineaActiva] = useState(null);
   const [pestana, setPestana] = usePersistente('pestana', 'audiencia');
 
   const aj = { ...AJUSTES_INICIALES, ...ajustes };
@@ -53,10 +58,12 @@ export default function App() {
   function restaurarCaso() {
     setTestigos(TESTIGOS_INICIALES);
     setDocumentos(DOCUMENTOS_INICIALES);
-    setTeoria(TEORIA_DEL_CASO);
+    setTeoria(TEORIA_INICIAL);
   }
 
   const props = { ajustes: aj, testigos, documentos, teoria };
+  const setTeoriaNorm = (f) => setTeoria((x) => (typeof f === 'function' ? f(normalizarTeoria(x, TEORIA_INICIAL)) : f));
+  const irA = (destino, lineaId = null) => { setLineaActiva(lineaId); setPestana(destino); };
 
   return (
     <div className="app">
@@ -84,9 +91,10 @@ export default function App() {
       </nav>
 
       <main className="contenido">
+        {pestana === 'teoria' && <TeoriaCaso {...props} setTeoria={setTeoriaNorm} irA={irA} />}
         {pestana === 'audiencia' && <Audiencia {...props} />}
-        {pestana === 'expediente' && <Expediente {...props} setTestigos={setTestigos} setDocumentos={setDocumentos} setTeoria={setTeoria} />}
-        {pestana === 'preparacion' && <Preparacion {...props} />}
+        {pestana === 'expediente' && <Expediente {...props} setTestigos={setTestigos} setDocumentos={setDocumentos} irA={irA} />}
+        {pestana === 'preparacion' && <Preparacion {...props} lineaInicial={lineaActiva} />}
         {pestana === 'semaforo' && <Semaforo {...props} />}
         {pestana === 'vivo' && <EnVivo {...props} />}
         {pestana === 'ajustes' && <Ajustes ajustes={aj} setAjustes={(f) => setAjustes((a) => (typeof f === 'function' ? f({ ...AJUSTES_INICIALES, ...a }) : f))} restaurarCaso={restaurarCaso} />}

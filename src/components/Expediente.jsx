@@ -4,7 +4,7 @@ import { ErrorCaja, Cargando } from './comunes.jsx';
 
 const TIPOS_DOC = ['Informe policial', 'Entrevista', 'Dictamen pericial', 'Acta', 'Otro'];
 
-export default function Expediente({ ajustes, testigos, setTestigos, documentos, setDocumentos, teoria, setTeoria }) {
+export default function Expediente({ ajustes, testigos, setTestigos, documentos, setDocumentos, irA }) {
   const [abierto, setAbierto] = useState(null);
   const [testigoDestino, setTestigoDestino] = useState(testigos[0]?.id || '');
   const [confirmo, setConfirmo] = useState(false);
@@ -54,13 +54,10 @@ export default function Expediente({ ajustes, testigos, setTestigos, documentos,
     <section className="panel" aria-labelledby="t-exp">
       <div className="panel__cabeza">
         <h2 id="t-exp">Expediente</h2>
-        <p className="nota">Testigos, sus registros previos y la teoría del caso. Contra estos documentos se buscan las contradicciones.</p>
+        <p className="nota">Testigos y sus registros previos. Contra estos documentos se buscan las contradicciones.</p>
       </div>
 
-      <label className="campo campo--ancho">
-        <span>Teoría del caso de quien interroga</span>
-        <textarea rows={3} value={teoria} onChange={(e) => setTeoria(e.target.value)} />
-      </label>
+      <p className="aviso aviso--suave">La teoría del caso tiene su propia sección. <button type="button" className="boton boton--secundario boton--chico" onClick={() => irA('teoria')}>Ir a Teoría del caso</button></p>
 
       <h3>Testigos</h3>
       <ul className="tarjetas">

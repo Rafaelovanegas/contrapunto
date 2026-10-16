@@ -1,9 +1,10 @@
+import { teoriaComoTexto } from '../lib/teoria.js';
 import { useState } from 'react';
 import { DEMO_SEMAFORO } from '../data/caso.js';
 import { evaluarPregunta } from '../lib/servicios.js';
 import { ChipSemaforo, ErrorCaja, BotonMicrofono, Cargando } from './comunes.jsx';
 
-export default function Semaforo({ ajustes, teoria }) {
+export default function Semaforo({ ajustes, teoria, testigos }) {
   const [pregunta, setPregunta] = useState('');
   const [modo, setModo] = useState('directo');
   const [historial, setHistorial] = useState([]);
@@ -17,7 +18,7 @@ export default function Semaforo({ ajustes, teoria }) {
     setOcupado(true);
     try {
       const m = modoForzado || modo;
-      const r = await evaluarPregunta({ ajustes, pregunta: q, modo: m, contexto: teoria });
+      const r = await evaluarPregunta({ ajustes, pregunta: q, modo: m, contexto: teoriaComoTexto(teoria, testigos) });
       setHistorial((h) => [{ id: Date.now(), pregunta: q, modo: m, resultado: r }, ...h]);
       setPregunta('');
     } catch (e) {

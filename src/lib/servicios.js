@@ -7,7 +7,21 @@ import {
 import {
   validarSemaforo, validarContradiccion, verificarAlerta, validarPreparacion, normalizar,
 } from './validate.js';
-import { DEMO_CONTRA, DEMO_SEMAFORO } from '../data/caso.js';
+import { DEMO_CONTRA, DEMO_SEMAFORO, TEORIA_INICIAL } from '../data/caso.js';
+import { SISTEMA_TEORIA, contenidoTeoria, SISTEMA_ESTRES, contenidoEstres } from './prompts.js';
+import { validarTeoria, validarEstres } from './validate.js';
+import { nuevoId } from './teoria.js';
+
+const DEMO_ESTRES = {
+  resumen: 'La teoría es sólida en credibilidad y licitud, pero depende mucho de las contradicciones del agente. Su punto más vulnerable es que el arma sí se aseguró y existe cadena de custodia.',
+  ataques: [
+    { punto: 'Contradicción cintura / mochila', ataque: 'Sostendré que es un detalle menor: lo relevante es que el arma se aseguró, se fijó fotográficamente y tiene cadena de custodia.', gravedad: 'alta', como_cubrirla: 'No presentar la contradicción como un detalle aislado: ligarla a la credibilidad total del agente y a la licitud del hallazgo.' },
+    { punto: 'Licitud de la revisión', ataque: 'Argumentaré que intentar retirarse al ver a la policía es un indicio suficiente para una inspección de persona.', gravedad: 'alta', como_cubrirla: 'Fijar en el contrainterrogatorio que el parte no describe ninguna conducta objetiva más allá del nerviosismo. Buscar criterios de la SCJN sobre control preventivo [verificar en fuente oficial].' },
+    { punto: 'Testigo Lucía Hernández', ataque: 'Diré que es una testigo tardía: nadie la entrevistó esa noche y aparece meses después.', gravedad: 'media', como_cubrirla: 'Acreditar su posición fija de ocho años y su iluminación propia, y usar que el parte afirma que no hubo testigos: la policía no la buscó.' },
+    { punto: 'Confesión del detenido', ataque: 'No la ofreceré como prueba; la defensa estará atacando algo que no uso.', gravedad: 'baja', como_cubrirla: 'Usarla solo como indicio de que el procedimiento fue irregular desde el inicio.' },
+  ],
+  demo: true,
+};
 
 function buscarDemo(lista, pregunta) {
   const n = normalizar(pregunta);
@@ -73,5 +87,35 @@ export async function prepararInterrogatorio({ ajustes, tipo, testigo, documento
   return llamarClaudeJSON(
     { llave: ajustes.llaveAnthropic, modelo: ajustes.modelo, sistema: SISTEMA_PREPARACION, contenido: contenidoPreparacion({ tipo, testigo, documentos, teoria }), maxTokens: TOKENS.preparacion },
     validarPreparacion
+  );
+}
+
+/** Borrador de teoría del caso a partir del expediente. Devuelve la estructura con ids asignados por código. */
+export async function proponerTeoria({ ajustes, teoria, testigos, documentos }) {
+  if (ajustes.modoDemo) return { ...TEORIA_INICIAL, demo: true };
+  const o = await llamarClaudeJSON(
+    { llave: ajustes.llaveAnthropic, modelo: ajustes.modelo, sistema: SISTEMA_TEORIA, contenido: contenidoTeoria({ parte: teoria.parte, cliente: teoria.cliente, delito: teoria.delito, testigos, documentos }), maxTokens: TOKENS.preparacion },
+    validarTeoria
+  );
+  const elementos = o.elementos.map((e) => ({ id: nuevoId('e'), elemento: e.elemento, postura: e.postura, comentario: e.comentario || '' }));
+  const idsTestigos = new Set(testigos.map((t) => t.id));
+  return {
+    parte: teoria.parte,
+    cliente: teoria.cliente,
+    lema: o.lema || '',
+    relato: o.relato,
+    delito: o.delito || teoria.delito || '',
+    elementos,
+    proposiciones: (o.proposiciones || []).map((p) => ({ id: nuevoId('p'), texto: p.texto, elementoId: elementos[(Number(p.elemento) || 1) - 1]?.id || '', prueba: p.prueba || '', estado: 'pendiente' })),
+    lineas: o.lineas.map((l, i) => ({ id: nuevoId('l'), titulo: l.titulo, fundamento: l.fundamento || '', prioridad: Number(l.prioridad) || i + 1, mision: (l.mision || []).filter((m) => idsTestigos.has(m.testigoId)).map((m) => ({ testigoId: m.testigoId, tipo: m.tipo === 'directo' ? 'directo' : 'contra', objetivo: m.objetivo || '' })) })),
+  };
+}
+
+/** Prueba de estrés: la IA actúa como Ministerio Público contra la teoría. */
+export async function probarTeoria({ ajustes, teoriaTexto, documentos }) {
+  if (ajustes.modoDemo) return DEMO_ESTRES;
+  return llamarClaudeJSON(
+    { llave: ajustes.llaveAnthropic, modelo: ajustes.modelo, sistema: SISTEMA_ESTRES, contenido: contenidoEstres({ teoriaTexto, documentos }), maxTokens: TOKENS.preparacion },
+    validarEstres
   );
 }
