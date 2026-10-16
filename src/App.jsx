@@ -45,6 +45,7 @@ export default function App() {
   const [teoriaGuardada, setTeoria] = usePersistente('teoria', TEORIA_INICIAL);
   const teoria = normalizarTeoria(teoriaGuardada, TEORIA_INICIAL);
   const [lineaActiva, setLineaActiva] = useState(null);
+  const [generarAlEntrar, setGenerarAlEntrar] = useState(false);
   const [pestana, setPestana] = usePersistente('pestana', 'audiencia');
 
   const aj = { ...AJUSTES_INICIALES, ...ajustes };
@@ -63,7 +64,7 @@ export default function App() {
 
   const props = { ajustes: aj, testigos, documentos, teoria };
   const setTeoriaNorm = (f) => setTeoria((x) => (typeof f === 'function' ? f(normalizarTeoria(x, TEORIA_INICIAL)) : f));
-  const irA = (destino, lineaId = null) => { setLineaActiva(lineaId); setPestana(destino); };
+  const irA = (destino, lineaId = null, opciones = {}) => { setLineaActiva(lineaId); setGenerarAlEntrar(!!opciones.generar); setPestana(destino); };
 
   return (
     <div className="app">
@@ -91,7 +92,7 @@ export default function App() {
       </nav>
 
       <main className="contenido">
-        {pestana === 'teoria' && <TeoriaCaso {...props} setTeoria={setTeoriaNorm} irA={irA} />}
+        {pestana === 'teoria' && <TeoriaCaso {...props} setTeoria={setTeoriaNorm} irA={irA} generarAlEntrar={generarAlEntrar} consumirGenerar={() => setGenerarAlEntrar(false)} />}
         {pestana === 'audiencia' && <Audiencia {...props} />}
         {pestana === 'expediente' && <Expediente {...props} setTestigos={setTestigos} setDocumentos={setDocumentos} irA={irA} />}
         {pestana === 'preparacion' && <Preparacion {...props} lineaInicial={lineaActiva} />}

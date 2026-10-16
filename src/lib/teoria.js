@@ -12,6 +12,7 @@ export const ESTADOS = { pendiente: 'Pendiente', acreditada: 'Acreditada', debil
 export function normalizarTeoria(t, inicial) {
   if (!t) return inicial;
   if (typeof t === 'string') return { ...inicial, relato: t };
+  if (typeof t.versionImputado !== 'string') t = { ...t, versionImputado: '' };
   return {
     ...inicial,
     ...t,
@@ -28,6 +29,7 @@ export function teoriaComoTexto(t, testigos = [], lineaId = null) {
   const nombre = (id) => testigos.find((x) => x.id === id)?.nombre || id;
   const partes = [
     `PARTE: ${t.parte === 'acusacion' ? 'Acusación (Ministerio Público o asesor jurídico)' : 'Defensa'}${t.cliente ? ` de ${t.cliente}` : ''}`,
+    t.versionImputado ? `VERSIÓN DEL ${t.parte === 'acusacion' ? 'OFENDIDO' : 'IMPUTADO'} (lo que relató a su abogado): ${t.versionImputado}` : '',
     t.lema ? `LEMA DEL CASO: ${t.lema}` : '',
     t.relato ? `RELATO: ${t.relato}` : '',
     t.delito ? `DELITO IMPUTADO: ${t.delito}` : '',

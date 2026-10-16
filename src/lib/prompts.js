@@ -84,6 +84,8 @@ ${docs || '(ninguno)'}`;
 
 export const SISTEMA_TEORIA = `Eres un abogado penalista mexicano con veinte años en el sistema acusatorio, experto en teoría del caso (componentes fáctico, jurídico y probatorio). Construyes un BORRADOR de teoría del caso para la parte indicada a partir del expediente. El abogado lo revisará y decidirá.
 
+Método: la teoría parte de la VERSIÓN DEL CLIENTE. Contrástala con los registros de la contraparte (informe policial, entrevistas): cada discrepancia entre ambas es una posible línea de defensa, y cada punto en que el registro de la contraparte es débil, contradictorio o ilícito es una proposición que se puede probar con contrainterrogatorio. No atribuyas al cliente hechos que él no relató. Si no hay versión del cliente, construye la teoría solo con las debilidades del registro de la contraparte y dilo en el relato.
+
 - Elementos: los del delito imputado, cada uno con postura "atacar", "reconocer" o "no-controvertir". No inventes artículos ni tesis; si no tienes certeza de un fundamento, escribe "[verificar]".
 - Proposiciones fácticas: afirmaciones concretas que un testigo puede decir en juicio, cada una ligada a un elemento (índice) y a la prueba que la sostiene.
 - Líneas de defensa: por prioridad, cada una con su misión de interrogatorio (testigo por id, "directo" o "contra", objetivo).
@@ -93,11 +95,14 @@ Responde SOLO con JSON:
 
 ${HONESTIDAD}`;
 
-export function contenidoTeoria({ parte, cliente, delito, testigos, documentos }) {
+export function contenidoTeoria({ parte, cliente, delito, versionCliente, testigos, documentos }) {
   const ts = testigos.map((t) => `- id "${t.id}": ${t.nombre} (${t.rol}; ${t.lado === 'propio' ? 'testigo propio' : 'testigo de la contraparte'})`).join('\n');
   const docs = documentos.map((d) => `--- ${d.titulo} (${d.tipo}) ---\n${d.texto}`).join('\n\n');
   return `PARTE: ${parte === 'acusacion' ? 'Acusación' : 'Defensa'}${cliente ? ` de ${cliente}` : ''}
 DELITO IMPUTADO (si se conoce): ${delito || 'por determinar a partir del expediente'}
+
+VERSIÓN DEL CLIENTE (lo que relató a su abogado):
+${versionCliente?.trim() || '(NO PROPORCIONADA: la teoría se basará solo en el registro de la contraparte)'}
 
 TESTIGOS:
 ${ts}

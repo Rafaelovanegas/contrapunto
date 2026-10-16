@@ -10,6 +10,7 @@ export default function Expediente({ ajustes, testigos, setTestigos, documentos,
   const [confirmo, setConfirmo] = useState(false);
   const [ocupado, setOcupado] = useState('');
   const [error, setError] = useState(null);
+  const [recienSubidos, setRecienSubidos] = useState(0);
   const [nuevo, setNuevo] = useState({ nombre: '', rol: '', lado: 'contraparte', perfil: '' });
   const entrada = useRef(null);
 
@@ -28,6 +29,7 @@ export default function Expediente({ ajustes, testigos, setTestigos, documentos,
         const doc = { id: `doc-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, titulo: r.titulo, tipo: TIPOS_DOC.includes(r.tipo) ? r.tipo : 'Otro', testigoId: testigoDestino, texto: r.texto, origen: r.viaIA ? 'transcrito con IA · revisar' : 'importado' };
         setDocumentos((ds) => [...ds, doc]);
         setAbierto(doc.id);
+        setRecienSubidos((n) => n + 1);
       } catch (e) {
         setError(e);
       }
@@ -112,6 +114,15 @@ export default function Expediente({ ajustes, testigos, setTestigos, documentos,
       <p className="nota">Formatos: PDF (también escaneado), Word .docx, texto .txt, fotografía JPG/PNG/WEBP. Máximo 20 MB por archivo.</p>
       {ocupado ? <Cargando texto={ocupado} /> : null}
       <ErrorCaja error={error} onCerrar={() => setError(null)} />
+      {recienSubidos && !ocupado ? (
+        <div className="aviso aviso--legal siguiente">
+          <p><strong>{recienSubidos === 1 ? 'Documento agregado.' : `${recienSubidos} documentos agregados.`}</strong> Revisa la transcripción abajo antes de seguir: las alertas de contradicción dependen de que el texto sea fiel al original.</p>
+          <div className="fila">
+            <button type="button" className="boton boton--primario" onClick={() => { setRecienSubidos(0); irA('teoria', null, { generar: true }); }}>Generar teoría del caso con este expediente</button>
+            <button type="button" className="boton boton--secundario" onClick={() => setRecienSubidos(0)}>Ahora no</button>
+          </div>
+        </div>
+      ) : null}
 
       <h3>Documentos</h3>
       <ul className="tarjetas">

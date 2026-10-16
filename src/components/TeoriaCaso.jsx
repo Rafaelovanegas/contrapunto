@@ -1,17 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { POSTURAS, ESTADOS, teoriaComoTexto, nuevoId } from '../lib/teoria.js';
 import { proponerTeoria, probarTeoria } from '../lib/servicios.js';
 import { ErrorCaja, Cargando } from './comunes.jsx';
 
 const GRAVEDAD = { alta: 'Alta', media: 'Media', baja: 'Baja' };
 
-export default function TeoriaCaso({ ajustes, testigos, documentos, teoria, setTeoria, irA }) {
+export default function TeoriaCaso({ ajustes, testigos, documentos, teoria, setTeoria, irA, generarAlEntrar, consumirGenerar }) {
   const [ocupado, setOcupado] = useState(null);
   const [error, setError] = useState(null);
   const [borrador, setBorrador] = useState(null);
   const [estres, setEstres] = useState(null);
 
   const t = teoria;
+  const lanzado = useRef(false);
+  useEffect(() => {
+    if (generarAlEntrar && !lanzado.current) {
+      lanzado.current = true;
+      consumirGenerar();
+      ejecutar('borrador');
+    }
+  });
   const set = (campo, valor) => setTeoria((x) => ({ ...x, [campo]: valor }));
   const editarEn = (lista, id, cambios) => setTeoria((x) => ({ ...x, [lista]: x[lista].map((it) => (it.id === id ? { ...it, ...cambios } : it)) }));
   const quitarDe = (lista, id) => setTeoria((x) => ({ ...x, [lista]: x[lista].filter((it) => it.id !== id) }));
@@ -62,6 +70,12 @@ export default function TeoriaCaso({ ajustes, testigos, documentos, teoria, setT
       </div>
 
       <label className="campo campo--ancho">
+        <span>Versión {t.parte === 'acusacion' ? 'de la víctima u ofendido' : 'del imputado'}: lo que relató, en sus palabras</span>
+        <textarea rows={4} value={t.versionImputado} placeholder="Lo que el cliente te contó. Es el punto de partida: la IA la contrasta con el informe para encontrar las líneas de defensa." onChange={(e) => set('versionImputado', e.target.value)} />
+      </label>
+      {!t.versionImputado.trim() ? <p className="aviso">Sin la versión del cliente, cualquier borrador se construirá solo con el registro de la acusación.</p> : null}
+
+      <label className="campo campo--ancho">
         <span>Lema del caso (la frase que el tribunal debe recordar)</span>
         <input className="lema" value={t.lema} onChange={(e) => set('lema', e.target.value)} />
       </label>
@@ -81,6 +95,7 @@ export default function TeoriaCaso({ ajustes, testigos, documentos, teoria, setT
       {borrador ? (
         <div className="aviso aviso--legal">
           <p><strong>Borrador propuesto.</strong> {borrador.demo ? 'Modo demostración: es la teoría precargada del caso ficticio.' : `${borrador.elementos.length} elementos, ${borrador.proposiciones.length} proposiciones y ${borrador.lineas.length} líneas de defensa.`} Revísalo antes de aplicarlo: sustituye la teoría actual.</p>
+          {borrador.sinVersion ? <p className="nota nota--riesgo">Teoría basada solo en el registro de la acusación: falta la versión de la defensa.</p> : null}
           <p className="nota">Lema: {borrador.lema}</p>
           <div className="fila">
             <button type="button" className="boton boton--primario" onClick={() => { const { demo, ...b } = borrador; setTeoria(b); setBorrador(null); }}>Aplicar borrador</button>

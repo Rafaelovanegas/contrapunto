@@ -94,7 +94,7 @@ export async function prepararInterrogatorio({ ajustes, tipo, testigo, documento
 export async function proponerTeoria({ ajustes, teoria, testigos, documentos }) {
   if (ajustes.modoDemo) return { ...TEORIA_INICIAL, demo: true };
   const o = await llamarClaudeJSON(
-    { llave: ajustes.llaveAnthropic, modelo: ajustes.modelo, sistema: SISTEMA_TEORIA, contenido: contenidoTeoria({ parte: teoria.parte, cliente: teoria.cliente, delito: teoria.delito, testigos, documentos }), maxTokens: TOKENS.preparacion },
+    { llave: ajustes.llaveAnthropic, modelo: ajustes.modelo, sistema: SISTEMA_TEORIA, contenido: contenidoTeoria({ parte: teoria.parte, cliente: teoria.cliente, delito: teoria.delito, versionCliente: teoria.versionImputado, testigos, documentos }), maxTokens: TOKENS.preparacion },
     validarTeoria
   );
   const elementos = o.elementos.map((e) => ({ id: nuevoId('e'), elemento: e.elemento, postura: e.postura, comentario: e.comentario || '' }));
@@ -102,6 +102,8 @@ export async function proponerTeoria({ ajustes, teoria, testigos, documentos }) 
   return {
     parte: teoria.parte,
     cliente: teoria.cliente,
+    versionImputado: teoria.versionImputado || '',
+    sinVersion: !teoria.versionImputado?.trim(),
     lema: o.lema || '',
     relato: o.relato,
     delito: o.delito || teoria.delito || '',

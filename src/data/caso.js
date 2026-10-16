@@ -73,6 +73,7 @@ export const DOCUMENTOS_INICIALES = [
 export const TEORIA_INICIAL = {
   parte: 'defensa',
   cliente: 'Julián Mora Arellano',
+  versionImputado: 'Salí de casa de mi tía como a las nueve de la noche para ir a la tienda; no llevaba mochila, solo mi celular. En la calle Laureles se paró una patrulla, se bajaron dos policías y me pusieron contra la pared. Uno de ellos me revisó, pero no fue el que manejaba. Me subieron a la patrulla y me dieron vueltas un buen rato antes de llevarme a la Fiscalía. Nunca me leyeron mis derechos en la calle. Yo no traía ninguna pistola. La señora de los elotes de la esquina vio todo.',
   lema: 'Un policía que no sabe dónde encontró el arma no puede probar que alguien la portaba.',
   relato: 'La noche del 14 de marzo de 2026, Julián caminaba por la calle Laureles, en Colima, sin mochila y con las manos vacías. Dos policías estatales bajaron de su patrulla, lo pusieron contra la pared y lo revisaron sin que hubiera un motivo objetivo. La única persona que presenció la escena, la vendedora de elotes de la esquina, no vio ningún arma. La versión policial cambia cada vez que se cuenta: la hora, quién revisó, dónde estaba el arma y por qué lo detuvieron.',
   delito: 'Portación de arma de fuego de uso exclusivo del Ejército, Armada y Fuerza Aérea (pistola calibre .45), art. 83, fracción II, en relación con el art. 11, inciso b), de la Ley Federal de Armas de Fuego y Explosivos.',
