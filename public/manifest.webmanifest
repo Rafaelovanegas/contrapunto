@@ -1,0 +1,14 @@
+{
+  "name": "CONTRAPUNTO · NEURALEXIA",
+  "short_name": "CONTRAPUNTO",
+  "description": "Asistente de interrogatorio y contrainterrogatorio con IA para litigación oral.",
+  "lang": "es-MX",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0D",
+  "theme_color": "#0D0D0D",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
