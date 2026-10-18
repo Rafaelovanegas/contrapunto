@@ -4,6 +4,7 @@ import { leer, guardar } from './lib/storage.js';
 import { DOCUMENTOS_INICIALES, TESTIGOS_INICIALES, TEORIA_INICIAL } from './data/caso.js';
 import { normalizarTeoria } from './lib/teoria.js';
 import TeoriaCaso from './components/TeoriaCaso.jsx';
+import Guion from './components/Guion.jsx';
 import Audiencia from './components/Audiencia.jsx';
 import Expediente from './components/Expediente.jsx';
 import Preparacion from './components/Preparacion.jsx';
@@ -18,6 +19,7 @@ const AJUSTES_INICIALES = {
   usarEleven: true,
   modelo: MODELO_POR_DEFECTO,
   modoDemo: true,
+  modoPonente: false,
   tema: 'codelexia',
   escala: 1,
 };
@@ -29,6 +31,7 @@ const PESTANAS = [
   { id: 'preparacion', nombre: 'Preparación' },
   { id: 'semaforo', nombre: 'Semáforo' },
   { id: 'vivo', nombre: 'En vivo' },
+  { id: 'guion', nombre: 'Guion', ponente: true },
   { id: 'ajustes', nombre: 'Ajustes' },
 ];
 
@@ -86,7 +89,7 @@ export default function App() {
       </header>
 
       <nav className="pestanas" aria-label="Secciones">
-        {PESTANAS.map((p) => (
+        {PESTANAS.filter((p) => !p.ponente || aj.modoPonente).map((p) => (
           <button key={p.id} type="button" className={`pestana ${pestana === p.id ? 'pestana--activa' : ''}`} aria-current={pestana === p.id ? 'page' : undefined} onClick={() => setPestana(p.id)}>{p.nombre}</button>
         ))}
       </nav>
@@ -98,6 +101,7 @@ export default function App() {
         {pestana === 'preparacion' && <Preparacion {...props} lineaInicial={lineaActiva} />}
         {pestana === 'semaforo' && <Semaforo {...props} />}
         {pestana === 'vivo' && <EnVivo {...props} />}
+        {pestana === 'guion' && aj.modoPonente && <Guion />}
         {pestana === 'ajustes' && <Ajustes ajustes={aj} setAjustes={(f) => setAjustes((a) => (typeof f === 'function' ? f({ ...AJUSTES_INICIALES, ...a }) : f))} restaurarCaso={restaurarCaso} />}
       </main>
 

@@ -34,6 +34,10 @@ export default function Ajustes({ ajustes, setAjustes, restaurarCaso }) {
           <input type="checkbox" checked={ajustes.modoDemo} onChange={(e) => cambiar({ modoDemo: e.target.checked })} />
           <span><strong>Modo demostración sin conexión.</strong> Usa respuestas grabadas del caso ficticio: no requiere llaves ni internet. Plan B para la charla.</span>
         </label>
+        <label className="interruptor">
+          <input type="checkbox" checked={!!ajustes.modoPonente} onChange={(e) => cambiar({ modoPonente: e.target.checked })} />
+          <span><strong>Modo ponente.</strong> Muestra la pestaña Guion: la charla completa, capítulo por capítulo, con lectura en voz alta para estudiar y repasar. Contiene notas internas; desactívalo antes de prestar el dispositivo o proyectar.</span>
+        </label>
       </div>
 
       <h3>Inteligencia artificial (Anthropic)</h3>
