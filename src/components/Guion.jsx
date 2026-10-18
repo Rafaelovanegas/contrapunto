@@ -1,5 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import GUION from '../data/guion.json';
+import CHARLA from '../data/guion.json';
+import MARCO from '../data/marco.json';
+
+// La charla (nueve bloques) y, al final, el anexo con el marco jurídico.
+const GUION = [...CHARLA, MARCO];
+const DECK_URL = 'https://claude.ai/artifact/TBxQ7MmCYfPyziaWZ598YM';
 import { leer, guardar } from '../lib/storage.js';
 import { fragmentosDe, duracionEstimada } from '../lib/lector.js';
 
@@ -189,13 +194,14 @@ export default function Guion() {
     <section className="panel" aria-labelledby="t-guion">
       <div className="panel__cabeza">
         <h2 id="t-guion">Guion de la charla</h2>
-        {prefs.conduccion ? null : <p className="nota">Nueve capítulos, {totalMin} minutos de exposición. Escúchalo para estudiar y repasar. Material de uso personal: contiene notas internas y el guion del testigo.</p>}
+        {prefs.conduccion ? null : <p className="nota">Nueve capítulos, {totalMin} minutos de exposición, más el anexo con el marco jurídico. Escúchalo para estudiar y repasar. Material de uso personal: contiene notas internas y el guion del testigo.</p>}
+        {prefs.conduccion ? null : <p className="nota"><a href={DECK_URL} target="_blank" rel="noopener noreferrer">Abrir las diapositivas de la charla</a> (se abren en Claude con tu cuenta).</p>}
       </div>
 
       <p className="aviso aviso--legal"><strong>En el vehículo:</strong> elige el capítulo y pulsa Reproducir antes de arrancar; no manipules el teléfono mientras conduces. Deja la pantalla encendida y la app al frente: si el teléfono se bloquea o cambias de app, la lectura se detiene.</p>
 
       <div className="lector">
-        <p className="etiqueta">Capítulo {GUION[cap].n} de {GUION.length} · fragmento {frag + 1} de {frags.length}</p>
+        <p className="etiqueta">{GUION[cap].anexo ? 'Anexo' : `Capítulo ${GUION[cap].n} de ${CHARLA.length}`} · fragmento {frag + 1} de {frags.length}</p>
         <h3 className="lector__titulo">{GUION[cap].titulo}</h3>
         {prefs.conduccion ? <p className="lector__frase">{frags[frag]?.texto}</p> : null}
         {controles}
@@ -228,15 +234,15 @@ export default function Guion() {
             {GUION.map((c, i) => (
               <li key={c.n}>
                 <button type="button" className={`capitulo ${i === cap ? 'capitulo--activo' : ''}`} onClick={() => ir(i, 0)}>
-                  <span className="capitulo__n">{c.n}</span>
+                  <span className="capitulo__n">{c.anexo ? 'A' : c.n}</span>
                   <span className="capitulo__titulo">{c.titulo}</span>
-                  <span className="nota">{c.min} min en la charla · {minutosTexto(duracionEstimada(fragmentosPorCap[i], prefs.velocidad))}</span>
+                  <span className="nota">{c.anexo ? 'Texto de las normas · verificar antes de citar' : `${c.min} min en la charla`} · {minutosTexto(duracionEstimada(fragmentosPorCap[i], prefs.velocidad))}</span>
                 </button>
               </li>
             ))}
           </ol>
 
-          <h3>Texto del capítulo {GUION[cap].n}</h3>
+          <h3>{GUION[cap].anexo ? 'Texto del anexo' : `Texto del capítulo ${GUION[cap].n}`}</h3>
           <div className="texto-guion">
             {frags.map((f, i) => (
               <p

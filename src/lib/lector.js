@@ -37,7 +37,16 @@ export function trocear(texto) {
         actual = '';
         for (const p of partes) {
           if ((actual + ' ' + p).trim().length <= MAX) actual = (actual + ' ' + p).trim();
-          else { if (actual) trozos.push(actual); actual = p; }
+          else if (p.length <= MAX) { if (actual) trozos.push(actual); actual = p; }
+          else {
+            // Sin comas útiles: cortar por palabras.
+            if (actual) trozos.push(actual);
+            actual = '';
+            for (const w of p.split(' ')) {
+              if ((actual + ' ' + w).trim().length <= MAX) actual = (actual + ' ' + w).trim();
+              else { if (actual) trozos.push(actual); actual = w; }
+            }
+          }
         }
       }
     }
@@ -58,7 +67,10 @@ function tablaComoTexto(filas) {
  */
 export function fragmentosDe(capitulo, { incluirEscena = false } = {}) {
   const out = [];
-  out.push({ tipo: 'titulo', texto: `Capítulo ${capitulo.n}. ${capitulo.titulo}.${capitulo.min ? ` ${mayuscula(minutosEnLetra(capitulo.min))}.` : ''}`, parte: -1 });
+  const encabezado = capitulo.anexo
+    ? `${capitulo.titulo}.`
+    : `Capítulo ${capitulo.n}. ${capitulo.titulo}.${capitulo.min ? ` ${mayuscula(minutosEnLetra(capitulo.min))}.` : ''}`;
+  out.push({ tipo: 'titulo', texto: encabezado, parte: -1 });
   capitulo.partes.forEach((p, i) => {
     if (p.t === 'esc') {
       if (incluirEscena) trocear(`Indicación: ${p.x}`).forEach((t) => out.push({ tipo: 'esc', texto: t, parte: i }));

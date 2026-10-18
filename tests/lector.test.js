@@ -35,3 +35,13 @@ test('minutos en letra', () => {
   assert.equal(minutosEnLetra(1), 'un minuto');
   assert.equal(minutosEnLetra(10), 'diez minutos');
 });
+
+test('el anexo del marco jurídico se lee sin número de capítulo y sin corchetes', async () => {
+  const { readFileSync } = await import('node:fs');
+  const marco = JSON.parse(readFileSync(new URL('../src/data/marco.json', import.meta.url)));
+  const frags = fragmentosDe(marco);
+  assert.equal(frags[0].texto, 'Anexo: marco jurídico.');
+  assert.ok(frags.every((f) => f.texto.length <= 220));
+  assert.ok(!frags.some((f) => f.texto.includes('[...]')));
+  assert.ok(frags.some((f) => f.texto.includes('Artículo 373')));
+});

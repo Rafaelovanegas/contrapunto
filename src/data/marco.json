@@ -1,0 +1,727 @@
+{
+ "n": 10,
+ "titulo": "Anexo: marco jurídico",
+ "min": 0,
+ "anexo": true,
+ "partes": [
+  {
+   "t": "sub",
+   "x": "Alcance y advertencia"
+  },
+  {
+   "t": "dic",
+   "x": "Este documento transcribe, palabra por palabra, las normas que sostienen la charla \"Técnica de litigación oral, interrogatorio y contrainterrogatorio con IA\": Constitución, tratados, Código Nacional de Procedimientos Penales (prueba testimonial e interrogatorio) y Ley Federal de Armas de Fuego y Explosivos (caso práctico)."
+  },
+  {
+   "t": "dic",
+   "x": "Es material de estudio, no copia certificada. Los textos se obtuvieron de fuentes oficiales por consulta web el 18 de octubre de 2026. El CNPP vino de un compilador porque el PDF oficial no pudo leerse completo. Antes de citar cualquier texto en un escrito o en audiencia, cotéjalo con el PDF oficial. La sección final dice el estado de verificación de cada parte."
+  },
+  {
+   "t": "tabla",
+   "x": [
+    [
+     "Ordenamiento",
+     "Porciones",
+     "Última reforma consultada",
+     "Fuente"
+    ],
+    [
+     "CPEUM",
+     "Arts. 1, 14, 16, 19 y 20",
+     "DOF 07-10-2026",
+     "Cámara de Diputados (oficial)"
+    ],
+    [
+     "CADH",
+     "Art. 8",
+     "Texto convencional",
+     "CNDH, cotejado con Corte IDH"
+    ],
+    [
+     "PIDCP",
+     "Art. 14, párrafos 1 a 3",
+     "Texto convencional",
+     "OHCHR (oficial)"
+    ],
+    [
+     "CNPP",
+     "Arts. 360 a 377, 385 y 386",
+     "DOF 28-11-2025 (portada oficial)",
+     "Compilador mley.mx, sin cotejo oficial"
+    ],
+    [
+     "LFAFE",
+     "Arts. 11 b) y 83 fr. II",
+     "DOF 29-05-2025",
+     "Cámara de Diputados (oficial)"
+    ]
+   ]
+  },
+  {
+   "t": "sub",
+   "x": "Constitución Política de los Estados Unidos Mexicanos"
+  },
+  {
+   "t": "dic",
+   "x": "Texto vigente, última reforma publicada DOF 07-10-2026. Fuente oficial."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 1o., párrafos primero a tercero"
+  },
+  {
+   "t": "dic",
+   "x": "En los Estados Unidos Mexicanos todas las personas gozarán de los derechos humanos reconocidos en esta Constitución y en los tratados internacionales de los que el Estado Mexicano sea parte, así como de las garantías para su protección, cuyo ejercicio no podrá restringirse ni suspenderse, salvo en los casos y bajo las condiciones que esta Constitución establece."
+  },
+  {
+   "t": "dic",
+   "x": "Las normas relativas a los derechos humanos se interpretarán de conformidad con esta Constitución y con los tratados internacionales de la materia favoreciendo en todo tiempo a las personas la protección más amplia."
+  },
+  {
+   "t": "dic",
+   "x": "Todas las autoridades, en el ámbito de sus competencias, tienen la obligación de promover, respetar, proteger y garantizar los derechos humanos de conformidad con los principios de universalidad, interdependencia, indivisibilidad y progresividad. En consecuencia, el Estado deberá prevenir, investigar, sancionar y reparar las violaciones a los derechos humanos, en los términos que establezca la ley."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 14, párrafo segundo"
+  },
+  {
+   "t": "dic",
+   "x": "Nadie podrá ser privado de la libertad o de sus propiedades, posesiones o derechos, sino mediante juicio seguido ante los tribunales previamente establecidos, en el que se cumplan las formalidades esenciales del procedimiento y conforme a las Leyes expedidas con anterioridad al hecho."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 16, párrafo primero"
+  },
+  {
+   "t": "dic",
+   "x": "Nadie puede ser molestado en su persona, familia, domicilio, papeles o posesiones, sino en virtud de mandamiento escrito de la autoridad competente, que funde y motive la causa legal del procedimiento. En los juicios y procedimientos seguidos en forma de juicio en los que se establezca como regla la oralidad, bastará con que quede constancia de ellos en cualquier medio que dé certeza de su contenido y del cumplimiento de lo previsto en este párrafo."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 16, flagrancia"
+  },
+  {
+   "t": "dic",
+   "x": "Cualquier persona puede detener al indiciado en el momento en que esté cometiendo un delito o inmediatamente después de haberlo cometido, poniéndolo sin demora a disposición de la autoridad civil más cercana y ésta con la misma prontitud, a la del Ministerio Público. Existirá un registro inmediato de la detención."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 16, caso urgente (referencia)"
+  },
+  {
+   "t": "dic",
+   "x": "Sólo en casos urgentes, cuando se trate de delito grave así calificado por la ley y ante el riesgo fundado de que el indiciado pueda sustraerse a la acción de la justicia, siempre y cuando no se pueda ocurrir ante la autoridad judicial por razón de la hora, lugar o circunstancia, el Ministerio Público podrá, bajo su responsabilidad, ordenar su detención, fundando y expresando los indicios que motiven su proceder."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 19, párrafo segundo (prisión preventiva oficiosa)"
+  },
+  {
+   "t": "dic",
+   "x": "El Ministerio Público sólo podrá solicitar al juez la prisión preventiva cuando otras medidas cautelares no sean suficientes para garantizar la comparecencia del imputado en el juicio, el desarrollo de la investigación, la protección de la víctima, de los testigos y de la comunidad, así como cuando el imputado esté siendo procesado o haya sido sentenciado previamente por la comisión de un delito doloso. El juez ordenará la prisión preventiva oficiosamente, en los casos de abuso o violencia sexual contra menores, delincuencia organizada, extorsión, delitos previstos en las leyes aplicables cometidos para la ilegal introducción y desvío, producción, preparación, enajenación, adquisición, importación, exportación, transportación, almacenamiento y distribución de precursores químicos y sustancias químicas esenciales, drogas sintéticas, fentanilo y derivados, homicidio doloso, feminicidio, violación, secuestro, trata de personas, robo de casa habitación, uso de programas sociales con fines electorales, corrupción tratándose de los delitos de enriquecimiento ilícito y ejercicio abusivo de funciones, robo al transporte de carga en cualquiera de sus modalidades, delitos en materia de hidrocarburos, petrolíferos o petroquímicos, delitos en materia de desaparición forzada de personas y desaparición cometida por particulares, delitos cometidos con medios violentos como armas y explosivos, delitos en materia de armas de fuego y explosivos de uso exclusivo del Ejército, la Armada y la Fuerza Aérea, delito de terrorismo y de los delitos graves que determine la ley en contra de la seguridad de la nación, de la salud, del libre desarrollo de la personalidad, contrabando y cualquier actividad relacionada con falsos comprobantes fiscales, en los términos fijados por la ley. A cualquier nacional o extranjero involucrado en la fabricación, distribución, enajenación, traslado o internación al territorio nacional de manera ilícita de armas, y a cualquier extranjero que realice actividades al margen de la ley vinculadas con los párrafos segundo y tercero del artículo 40 de esta Constitución, se le impondrá la pena más severa posible, así como la medida cautelar de prisión preventiva oficiosa. Para la interpretación y aplicación de las normas previstas en este párrafo, los órganos del Estado deberán atenerse a su literalidad, quedando prohibida cualquier interpretación análoga o extensiva que pretenda inaplicar, suspender, modificar o hacer nugatorios sus términos o su vigencia, ya sea de manera total o parcial."
+  },
+  {
+   "t": "dic",
+   "x": "Nota del texto oficial: párrafo reformado DOF 14-07-2011, 12-04-2019, 31-12-2024, 01-04-2025."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 20, párrafo inicial"
+  },
+  {
+   "t": "dic",
+   "x": "El proceso penal será acusatorio y oral. Se regirá por los principios de publicidad, contradicción, concentración, continuidad e inmediación."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 20, apartado A. De los principios generales"
+  },
+  {
+   "t": "dic",
+   "x": "I. El proceso penal tendrá por objeto el esclarecimiento de los hechos, proteger al inocente, procurar que el culpable no quede impune y que los daños causados por el delito se reparen;"
+  },
+  {
+   "t": "dic",
+   "x": "II. Toda audiencia se desarrollará en presencia del juez, sin que pueda delegar en ninguna persona el desahogo y la valoración de las pruebas, la cual deberá realizarse de manera libre y lógica;"
+  },
+  {
+   "t": "dic",
+   "x": "III. Para los efectos de la sentencia sólo se considerarán como prueba aquellas que hayan sido desahogadas en la audiencia de juicio. La ley establecerá las excepciones y los requisitos para admitir en juicio la prueba anticipada, que por su naturaleza requiera desahogo previo;"
+  },
+  {
+   "t": "dic",
+   "x": "IV. El juicio se celebrará ante un juez que no haya conocido del caso previamente. La presentación de los argumentos y los elementos probatorios se desarrollará de manera pública, contradictoria y oral;"
+  },
+  {
+   "t": "dic",
+   "x": "V. La carga de la prueba para demostrar la culpabilidad corresponde a la parte acusadora, conforme lo establezca el tipo penal. Las partes tendrán igualdad procesal para sostener la acusación o la defensa, respectivamente;"
+  },
+  {
+   "t": "dic",
+   "x": "VI. Ningún juzgador podrá tratar asuntos que estén sujetos a proceso con cualquiera de las partes sin que esté presente la otra, respetando en todo momento el principio de contradicción, salvo las excepciones que establece esta Constitución;"
+  },
+  {
+   "t": "dic",
+   "x": "VII. Una vez iniciado el proceso penal, siempre y cuando no exista oposición del inculpado, se podrá decretar su terminación anticipada en los supuestos y bajo las modalidades que determine la ley. Si el imputado reconoce ante la autoridad judicial, voluntariamente y con conocimiento de las consecuencias, su participación en el delito y existen medios de convicción suficientes para corroborar la imputación, el juez citará a audiencia de sentencia. La ley establecerá los beneficios que se podrán otorgar al inculpado cuando acepte su responsabilidad;"
+  },
+  {
+   "t": "dic",
+   "x": "VIII. El juez sólo condenará cuando exista convicción de la culpabilidad del procesado;"
+  },
+  {
+   "t": "dic",
+   "x": "IX. Cualquier prueba obtenida con violación de derechos fundamentales será nula;"
+  },
+  {
+   "t": "dic",
+   "x": "X. Tratándose de delincuencia organizada, el órgano de administración judicial podrá disponer las medidas necesarias para preservar la seguridad y resguardar la identidad de las personas juzgadoras, conforme al procedimiento que establezca la ley, y"
+  },
+  {
+   "t": "dic",
+   "x": "XI. Los principios previstos en este artículo, se observarán también en las audiencias preliminares al juicio."
+  },
+  {
+   "t": "dic",
+   "x": "Nota del texto oficial: la fracción X fue adicionada y la anterior X recorrida a XI por reforma DOF 15-09-2024."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 20, apartado B. De los derechos de toda persona imputada (fracciones I, II, III, IV, VI y VIII)"
+  },
+  {
+   "t": "dic",
+   "x": "I. A que se presuma su inocencia mientras no se declare su responsabilidad mediante sentencia emitida por el juez de la causa;"
+  },
+  {
+   "t": "dic",
+   "x": "II. A declarar o a guardar silencio. Desde el momento de su detención se le harán saber los motivos de la misma y su derecho a guardar silencio, el cual no podrá ser utilizado en su perjuicio. Queda prohibida y será sancionada por la ley penal, toda incomunicación, intimidación o tortura. La confesión rendida sin la asistencia del defensor carecerá de todo valor probatorio;"
+  },
+  {
+   "t": "dic",
+   "x": "III. A que se le informe, tanto en el momento de su detención como en su comparecencia ante el Ministerio Público o el juez, los hechos que se le imputan y los derechos que le asisten. Tratándose de delincuencia organizada, la autoridad judicial podrá autorizar que se mantenga en reserva el nombre y datos del acusador. La ley establecerá beneficios a favor del inculpado, procesado o sentenciado que preste ayuda eficaz para la investigación y persecución de delitos en materia de delincuencia organizada;"
+  },
+  {
+   "t": "dic",
+   "x": "IV. Se le recibirán los testigos y demás pruebas pertinentes que ofrezca, concediéndosele el tiempo que la ley estime necesario al efecto y auxiliándosele para obtener la comparecencia de las personas cuyo testimonio solicite, en los términos que señale la ley;"
+  },
+  {
+   "t": "dic",
+   "x": "VI. Le serán facilitados todos los datos que solicite para su defensa y que consten en el proceso. El imputado y su defensor tendrán acceso a los registros de la investigación cuando el primero se encuentre detenido y cuando pretenda recibírsele declaración o entrevistarlo. Asimismo, antes de su primera comparecencia ante juez podrán consultar dichos registros, con la oportunidad debida para preparar la defensa. A partir de este momento no podrán mantenerse en reserva las actuaciones de la investigación, salvo los casos excepcionales expresamente señalados en la ley cuando ello sea imprescindible para salvaguardar el éxito de la investigación y siempre que sean oportunamente revelados para no afectar el derecho de defensa;"
+  },
+  {
+   "t": "dic",
+   "x": "VIII. Tendrá derecho a una defensa adecuada por abogado, al cual elegirá libremente incluso desde el momento de su detención. Si no quiere o no puede nombrar un abogado, después de haber sido requerido para hacerlo, el juez le designará un defensor público. También tendrá derecho a que su defensor comparezca en todos los actos del proceso y éste tendrá obligación de hacerlo cuantas veces se le requiera, y"
+  },
+  {
+   "t": "sub",
+   "x": "Tratados internacionales"
+  },
+  {
+   "t": "dic",
+   "x": "Obligan por el artículo 1o. constitucional. El derecho a interrogar a los testigos está en CADH 8.2.f y PIDCP 14.3.e."
+  },
+  {
+   "t": "sub",
+   "x": "Convención Americana sobre Derechos Humanos, artículo 8. Garantías Judiciales"
+  },
+  {
+   "t": "lista",
+   "x": [
+    "Toda persona tiene derecho a ser oída, con las debidas garantías y dentro de un plazo razonable, por un juez o tribunal competente, independiente e imparcial, establecido con anterioridad por la ley, en la sustanciación de cualquier acusación penal formulada contra ella, o para la determinación de sus derechos y obligaciones de orden civil, laboral, fiscal o de cualquier otro carácter.",
+    "Toda persona inculpada de delito tiene derecho a que se presuma su inocencia mientras no se establezca legalmente su culpabilidad. Durante el proceso, toda persona tiene derecho, en plena igualdad, a las siguientes garantías mínimas:"
+   ]
+  },
+  {
+   "t": "dic",
+   "x": "a) derecho del inculpado de ser asistido gratuitamente por el traductor o intérprete, si no comprende o no habla el idioma del juzgado o tribunal;"
+  },
+  {
+   "t": "dic",
+   "x": "b) comunicación previa y detallada al inculpado de la acusación formulada;"
+  },
+  {
+   "t": "dic",
+   "x": "c) concesión al inculpado del tiempo y de los medios adecuados para la preparación de su defensa;"
+  },
+  {
+   "t": "dic",
+   "x": "d) derecho del inculpado de defenderse personalmente o de ser asistido por un defensor de su elección y de comunicarse libre y privadamente con su defensor;"
+  },
+  {
+   "t": "dic",
+   "x": "e) derecho irrenunciable de ser asistido por un defensor proporcionado por el Estado, remunerado o no según la legislación interna, si el inculpado no se defendiere por sí mismo ni nombrare defensor dentro del plazo establecido por la ley;"
+  },
+  {
+   "t": "dic",
+   "x": "f) derecho de la defensa de interrogar a los testigos presentes en el tribunal y de obtener la comparecencia, como testigos o peritos, de otras personas que puedan arrojar luz sobre los hechos;"
+  },
+  {
+   "t": "dic",
+   "x": "g) derecho a no ser obligado a declarar contra sí mismo ni a declararse culpable, y"
+  },
+  {
+   "t": "dic",
+   "x": "h) derecho de recurrir del fallo ante juez o tribunal superior."
+  },
+  {
+   "t": "lista",
+   "x": [
+    "La confesión del inculpado solamente es válida si es hecha sin coacción de ninguna naturaleza.",
+    "El inculpado absuelto por una sentencia firme no podrá ser sometido a nuevo juicio por los mismos hechos.",
+    "El proceso penal debe ser público, salvo en lo que sea necesario para preservar los intereses de la justicia."
+   ]
+  },
+  {
+   "t": "dic",
+   "x": "Fuente: CNDH, cotejada con Corte IDH."
+  },
+  {
+   "t": "sub",
+   "x": "Pacto Internacional de Derechos Civiles y Políticos, artículo 14, párrafos 1 a 3"
+  },
+  {
+   "t": "lista",
+   "x": [
+    "Todas las personas son iguales ante los tribunales y cortes de justicia. Toda persona tendrá derecho a ser oída públicamente y con las debidas garantías por un tribunal competente, independiente e imparcial, establecido por la ley, en la substanciación de cualquier acusación de carácter penal formulada contra ella o para la determinación de sus derechos u obligaciones de carácter civil. La prensa y el público podrán ser excluidos de la totalidad o parte de los juicios por consideraciones de moral, orden público o seguridad nacional en una sociedad democrática, o cuando lo exija el interés de la vida privada de las partes o, en la medida estrictamente necesaria en opinión del tribunal, cuando por circunstancias especiales del asunto la publicidad pudiera perjudicar a los intereses de la justicia; pero toda sentencia en materia penal o contenciosa será pública, excepto en los casos en que el interés de menores de edad exija lo contrario, o en las acusaciones referentes a pleitos matrimoniales o a la tutela de menores.",
+    "Toda persona acusada de un delito tiene derecho a que se presuma su inocencia mientras no se pruebe su culpabilidad conforme a la ley.",
+    "Durante el proceso, toda persona acusada de un delito tendrá derecho, en plena igualdad, a las siguientes garantías mínimas:"
+   ]
+  },
+  {
+   "t": "dic",
+   "x": "a) A ser informada sin demora, en un idioma que comprenda y en forma detallada, de la naturaleza y causas de la acusación formulada contra ella;"
+  },
+  {
+   "t": "dic",
+   "x": "b) A disponer del tiempo y de los medios adecuados para la preparación de su defensa y a comunicarse con un defensor de su elección;"
+  },
+  {
+   "t": "dic",
+   "x": "c) A ser juzgado sin dilaciones indebidas;"
+  },
+  {
+   "t": "dic",
+   "x": "d) A hallarse presente en el proceso y a defenderse personalmente o ser asistida por un defensor de su elección; a ser informada, si no tuviera defensor, del derecho que le asiste a tenerlo, y, siempre que el interés de la justicia lo exija, a que se le nombre defensor de oficio, gratuitamente, si careciere de medios suficientes para pagarlo;"
+  },
+  {
+   "t": "dic",
+   "x": "e) A interrogar o hacer interrogar a los testigos de cargo y a obtener la comparecencia de los testigos de descargo y que éstos sean interrogados en las mismas condiciones que los testigos de cargo;"
+  },
+  {
+   "t": "dic",
+   "x": "f) A ser asistida gratuitamente por un intérprete, si no comprende o no habla el idioma empleado en el tribunal;"
+  },
+  {
+   "t": "dic",
+   "x": "g) A no ser obligada a declarar contra sí misma ni a confesarse culpable."
+  },
+  {
+   "t": "dic",
+   "x": "Fuente: OHCHR, versión oficial en español."
+  },
+  {
+   "t": "sub",
+   "x": "Código Nacional de Procedimientos Penales: prueba testimonial e interrogatorio"
+  },
+  {
+   "t": "dic",
+   "x": "Los artículos 371 a 376 son el núcleo técnico de la charla; el 375 (testigo hostil) y los 385 y 386 completan las reglas del uso de registros previos. Texto tomado del compilador mley.mx, sin cotejo oficial (ver la sección final)."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 360. Deber de testificar"
+  },
+  {
+   "t": "dic",
+   "x": "Toda persona tendrá la obligación de concurrir al proceso cuando sea citado y de declarar la verdad de cuanto conozca y le sea preguntado; asimismo, no deberá ocultar hechos, circunstancias o cualquier otra información que sea relevante para la solución de la controversia, salvo disposición en contrario."
+  },
+  {
+   "t": "dic",
+   "x": "El testigo no estará en la obligación de declarar sobre hechos por los que se le pueda fincar responsabilidad penal."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 361. Facultad de abstención"
+  },
+  {
+   "t": "dic",
+   "x": "Podrán abstenerse de declarar el tutor, curador, pupilo, cónyuge, concubina o concubinario, conviviente del imputado, la persona que hubiere vivido de forma permanente con el imputado durante por lo menos dos años anteriores al hecho, sus parientes por consanguinidad en la línea recta ascendente o descendente hasta el cuarto grado y en la colateral por consanguinidad hasta el segundo grado inclusive, salvo que fueran denunciantes."
+  },
+  {
+   "t": "dic",
+   "x": "Deberá informarse a las personas mencionadas de la facultad de abstención antes de declarar, pero si aceptan rendir testimonio no podrán negarse a contestar las preguntas formuladas."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 362. Deber de guardar secreto"
+  },
+  {
+   "t": "dic",
+   "x": "Es inadmisible el testimonio de personas que respecto del objeto de su declaración, tengan el deber de guardar secreto con motivo del conocimiento que tengan de los hechos en razón del oficio o profesión, tales como ministros religiosos, abogados, visitadores de derechos humanos, médicos, psicólogos, farmacéuticos y enfermeros, así como los funcionarios públicos sobre información que no es susceptible de divulgación según las leyes de la materia. No obstante, estas personas no podrán negar su testimonio cuando sean liberadas por el interesado del deber de guardar secreto."
+  },
+  {
+   "t": "dic",
+   "x": "En caso de ser citadas, deberán comparecer y explicar el motivo del cual surge la obligación de guardar secreto y de abstenerse de declarar."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 363. Citación de testigos"
+  },
+  {
+   "t": "dic",
+   "x": "Los testigos serán citados para su examinación. En los casos de urgencia, podrán ser citados por cualquier medio que garantice la recepción de la citación, de lo cual se deberá dejar constancia. El testigo podrá presentarse a declarar sin previa cita."
+  },
+  {
+   "t": "dic",
+   "x": "Si el testigo reside en un lugar lejano al asiento del órgano judicial y carece de medios económicos para trasladarse, se dispondrá lo necesario para asegurar su comparecencia."
+  },
+  {
+   "t": "dic",
+   "x": "Tratándose de testigos que sean servidores públicos, la dependencia en la que se desempeñen adoptará las medidas correspondientes para garantizar su comparecencia, en cuyo caso absorberá además los gastos que se generen."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 364. Comparecencia obligatoria de testigos"
+  },
+  {
+   "t": "dic",
+   "x": "Si el testigo debidamente citado no se presentara a la citación o haya temor fundado de que se ausente o se oculte, se le hará comparecer en ese acto por medio de la fuerza pública sin necesidad de agotar ningún otro medio de apremio."
+  },
+  {
+   "t": "dic",
+   "x": "Las autoridades están obligadas a auxiliar oportuna y diligentemente al Tribunal para garantizar la comparecencia obligatoria de los testigos. El Órgano jurisdiccional podrá emplear contra las autoridades los medios de apremio que establece este Código en caso de incumplimiento o retardo a sus determinaciones."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 365. Excepciones a la obligación de comparecencia"
+  },
+  {
+   "t": "dic",
+   "x": "No estarán obligados a comparecer en los términos previstos en los artículos anteriores y podrán declarar en la forma señalada para los testimonios especiales los siguientes:"
+  },
+  {
+   "t": "dic",
+   "x": "I. Respecto de los servidores públicos federales, el Presidente de la República; los Secretarios de Estado de la Federación; el Procurador General de la República; los Ministros de la Suprema Corte de Justicia de la Nación, y los Diputados y Senadores del Congreso de la Unión; los Magistrados del Tribunal Electoral del Poder Judicial de la Federación y los Consejeros del Instituto Federal Electoral;"
+  },
+  {
+   "t": "dic",
+   "x": "II. Respecto de los servidores públicos estatales, el Gobernador; los Secretarios de Estado; el Procurador General de Justicia o su equivalente; los Diputados de los Congresos locales e integrantes de la Asamblea Legislativa del Distrito Federal; los Magistrados del Tribunal Superior de Justicia y del Tribunal Estatal Electoral y los Consejeros del Instituto Electoral estatal;"
+  },
+  {
+   "t": "dic",
+   "x": "III. Los extranjeros que gozaren en el país de inmunidad diplomática, de conformidad con los Tratados sobre la materia, y"
+  },
+  {
+   "t": "dic",
+   "x": "IV. Los que, por enfermedad grave u otro impedimento calificado por el Órgano jurisdiccional estén imposibilitados de hacerlo."
+  },
+  {
+   "t": "dic",
+   "x": "Si las personas enumeradas en las fracciones anteriores renunciaren a su derecho a no comparecer, deberán prestar declaración conforme a las reglas generales previstas en este Código."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 366. Testimonios especiales"
+  },
+  {
+   "t": "dic",
+   "x": "Cuando deba recibirse testimonio de menores de edad víctimas del delito y se tema por su afectación psicológica o emocional, así como en caso de víctimas de los delitos de violación o secuestro, el Órgano jurisdiccional a petición de las partes, podrá ordenar su recepción con el auxilio de familiares o peritos especializados. Para ello deberán utilizarse las técnicas audiovisuales adecuadas que favorezcan evitar la confrontación con el imputado."
+  },
+  {
+   "t": "dic",
+   "x": "Las personas que no puedan concurrir a la sede judicial, por estar físicamente impedidas, serán examinadas en el lugar donde se encuentren y su testimonio será transmitido por sistemas de reproducción a distancia."
+  },
+  {
+   "t": "dic",
+   "x": "Estos procedimientos especiales deberán llevarse a cabo sin afectar el derecho a la confrontación y a la defensa."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 367. Protección a los testigos"
+  },
+  {
+   "t": "dic",
+   "x": "El Órgano jurisdiccional, por un tiempo razonable, podrá ordenar medidas especiales destinadas a proteger la integridad física y psicológica del testigo y sus familiares, mismas que podrán ser renovadas cuantas veces fuere necesario, sin menoscabo de lo dispuesto en la legislación aplicable."
+  },
+  {
+   "t": "dic",
+   "x": "De igual forma, el Ministerio Público o la autoridad que corresponda adoptarán las medidas que fueren procedentes para conferir la debida protección a víctimas, ofendidos, testigos, antes o después de prestadas sus declaraciones, y a sus familiares y en general a todos los sujetos que intervengan en el procedimiento, sin menoscabo de lo dispuesto en la legislación aplicable."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 368. Prueba pericial"
+  },
+  {
+   "t": "dic",
+   "x": "Podrá ofrecerse la prueba pericial cuando, para el examen de personas, hechos, objetos o circunstancias relevantes para el proceso, fuere necesario o conveniente poseer conocimientos especiales en alguna ciencia, arte, técnica u oficio."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 369. Título oficial"
+  },
+  {
+   "t": "dic",
+   "x": "Los peritos deberán poseer título oficial en la materia relativa al punto sobre el cual dictaminarán y no tener impedimentos para el ejercicio profesional, siempre que la ciencia, el arte, la técnica o el oficio sobre la que verse la pericia en cuestión esté reglamentada; en caso contrario, deberá designarse a una persona de idoneidad manifiesta y que preferentemente pertenezca a un gremio o agrupación relativa a la actividad sobre la que verse la pericia."
+  },
+  {
+   "t": "dic",
+   "x": "No se exigirán estos requisitos para quien declare como testigo sobre hechos o circunstancias que conoció espontáneamente, aunque para informar sobre ellos utilice las aptitudes especiales que posee en una ciencia, arte, técnica u oficio."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 370. Medidas de protección"
+  },
+  {
+   "t": "dic",
+   "x": "En caso necesario, los peritos y otros terceros que deban intervenir en el procedimiento para efectos probatorios, podrán pedir a la autoridad correspondiente que adopte medidas tendentes a que se les brinde la protección prevista para los testigos, en los términos de la legislación aplicable."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 371. Declarantes en la audiencia de juicio"
+  },
+  {
+   "t": "dic",
+   "x": "Antes de declarar, los testigos no podrán comunicarse entre sí, ni ver, oír o ser informados de lo que ocurra en la audiencia, por lo que permanecerán en una sala distinta a aquella en donde se desarrolle, advertidos de lo anterior por el juzgador que preside la audiencia. Serán llamados en el orden establecido. Esta disposición no aplica al acusado ni a la víctima, salvo cuando ésta deba declarar en juicio como testigo."
+  },
+  {
+   "t": "dic",
+   "x": "El juzgador que presida la audiencia de juicio identificará al perito o testigo, le tomará protesta de conducirse con verdad y le advertirá de las penas que se imponen si se incurre en falsedad de declaraciones."
+  },
+  {
+   "t": "dic",
+   "x": "Durante la audiencia, los peritos y testigos deberán ser interrogados personalmente. Su declaración personal no podrá ser sustituida por la lectura de los registros en que consten anteriores declaraciones, o de otros documentos que las contengan, y sólo deberá referirse a ésta y a las preguntas realizadas por las partes."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 372. Desarrollo de interrogatorio"
+  },
+  {
+   "t": "dic",
+   "x": "Otorgada la protesta y realizada su identificación, el juzgador que presida la audiencia de juicio concederá la palabra a la parte que propuso el testigo, perito o al acusado para que lo interrogue, y con posterioridad a los demás sujetos que intervienen en el proceso, respetándose siempre el orden asignado. La parte contraria podrá inmediatamente después contrainterrogar al testigo, perito o al acusado."
+  },
+  {
+   "t": "dic",
+   "x": "Los testigos, peritos o el acusado responderán directamente a las preguntas que les formulen el Ministerio Público, el Defensor o el Asesor jurídico de la víctima, en su caso. El Órgano jurisdiccional deberá abstenerse de interrumpir dicho interrogatorio salvo que medie objeción fundada de parte, o bien, resulte necesario para mantener el orden y decoro necesarios para la debida diligenciación de la audiencia. Sin perjuicio de lo anterior, el Órgano Jurisdiccional podrá formular preguntas para aclarar lo manifestado por quien deponga, en los términos previstos en este Código."
+  },
+  {
+   "t": "dic",
+   "x": "A solicitud de algunas de las partes, el Tribunal podrá autorizar un nuevo interrogatorio a los testigos que ya hayan declarado en la audiencia, siempre y cuando no hayan sido liberados; al perito se le podrán formular preguntas con el fin de proponerle hipótesis sobre la materia del dictamen pericial, a las que el perito deberá responder atendiéndose a la ciencia, la profesión y los hechos hipotéticos propuestos."
+  },
+  {
+   "t": "dic",
+   "x": "Después del contrainterrogatorio el oferente podrá repreguntar al testigo en relación a lo manifestado. En la materia del contrainterrogatorio la parte contraria podrá recontrainterrogar al testigo respecto de la materia de las preguntas."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 373. Reglas para formular preguntas en juicio"
+  },
+  {
+   "t": "dic",
+   "x": "Toda pregunta deberá formularse de manera oral y versará sobre un hecho específico. En ningún caso se permitirán preguntas ambiguas o poco claras, conclusivas, impertinentes o irrelevantes o argumentativas, que tiendan a ofender al testigo o peritos o que pretendan coaccionarlos."
+  },
+  {
+   "t": "dic",
+   "x": "Las preguntas sugestivas sólo se permitirán a la contraparte de quien ofreció al testigo, en contrainterrogatorio."
+  },
+  {
+   "t": "dic",
+   "x": "Nota del compilador: reforma DOF 17-06-2016, que derogó el entonces párrafo tercero."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 374. Objeciones"
+  },
+  {
+   "t": "dic",
+   "x": "La objeción de preguntas deberá realizarse antes de que el testigo emita respuesta. El Juez analizará la pregunta y su objeción y en caso de considerar obvia la procedencia de la pregunta resolverá de plano. Contra esta determinación no se admite recurso alguno."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 375. Testigo hostil"
+  },
+  {
+   "t": "dic",
+   "x": "El Tribunal de enjuiciamiento permitirá al oferente de la prueba realizar preguntas sugestivas cuando advierta que el testigo se está conduciendo de manera hostil."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 376. Lectura para apoyo de memoria o para demostrar o superar contradicciones en audiencia"
+  },
+  {
+   "t": "dic",
+   "x": "Durante el interrogatorio y contrainterrogatorio del acusado, del testigo o del perito, podrán leer parte de sus entrevistas, manifestaciones anteriores, documentos por ellos elaborados o cualquier otro registro de actos en los que hubiera participado, realizando cualquier tipo de manifestación, cuando fuera necesario para apoyar la memoria del respectivo declarante, superar o evidenciar contradicciones, o solicitar las aclaraciones pertinentes."
+  },
+  {
+   "t": "dic",
+   "x": "Con el mismo propósito se podrá leer durante la declaración de un perito parte del informe que él hubiere elaborado."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 377. Declaración del acusado en juicio"
+  },
+  {
+   "t": "dic",
+   "x": "El acusado podrá rendir su declaración en cualquier momento durante la audiencia. En tal caso, el juzgador que preside la audiencia le permitirá que lo haga libremente o conteste las preguntas de las partes. En este caso se podrán utilizar las declaraciones previas rendidas por el acusado, para apoyo de memoria, evidenciar o superar contradicciones. El Órgano jurisdiccional podrá formularle preguntas destinadas a aclarar su dicho."
+  },
+  {
+   "t": "dic",
+   "x": "El acusado podrá solicitar ser oído, con el fin de aclarar o complementar sus manifestaciones, siempre que preserve la disciplina en la audiencia."
+  },
+  {
+   "t": "dic",
+   "x": "En la declaración del acusado se seguirán, en lo conducente, las mismas reglas para el desarrollo del interrogatorio."
+  },
+  {
+   "t": "dic",
+   "x": "El imputado deberá declarar con libertad de movimiento, sin el uso de instrumentos de seguridad, salvo cuando sea absolutamente indispensable para evitar su fuga o daños a otras personas."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 385. Prohibición de lectura e incorporación al juicio de registros de la investigación y documentos"
+  },
+  {
+   "t": "dic",
+   "x": "No se podrán incorporar o invocar como medios de prueba ni dar lectura durante el debate, a los registros y demás documentos que den cuenta de actuaciones realizadas por la Policía o el Ministerio Público en la investigación, con excepción de los supuestos expresamente previstos en este Código."
+  },
+  {
+   "t": "dic",
+   "x": "No se podrán incorporar como medio de prueba o dar lectura a actas o documentos que den cuenta de actuaciones declaradas nulas o en cuya obtención se hayan vulnerado derechos fundamentales."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 386. Excepción para la incorporación por lectura de declaraciones anteriores"
+  },
+  {
+   "t": "dic",
+   "x": "Podrán incorporarse al juicio, previa lectura o reproducción, los registros en que consten anteriores declaraciones o informes de testigos, peritos o acusados, únicamente en los siguientes casos:"
+  },
+  {
+   "t": "dic",
+   "x": "I. El testigo o coimputado haya fallecido, presente un trastorno mental transitorio o permanente o haya perdido la capacidad para declarar en juicio y, por esa razón, no hubiese sido posible solicitar su desahogo anticipado, o"
+  },
+  {
+   "t": "dic",
+   "x": "II. Cuando la incomparecencia de los testigos, peritos o coimputados, fuere atribuible al acusado."
+  },
+  {
+   "t": "dic",
+   "x": "Cualquiera de estas circunstancias deberá ser debidamente acreditada."
+  },
+  {
+   "t": "sub",
+   "x": "Ley Federal de Armas de Fuego y Explosivos (caso práctico)"
+  },
+  {
+   "t": "dic",
+   "x": "Texto vigente, última reforma DOF 29-05-2025. Fuente oficial. Esa reforma cambió la denominación: el delito del caso es ahora portación de arma de uso exclusivo de la Fuerza Armada Permanente. La pistola .45 queda en el inciso b), dentro de \".38\" Super y las de calibres superiores\". Los hechos del caso (14 de marzo de 2026) son posteriores a la reforma, así que rige el texto nuevo."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 11, encabezado e inciso b)"
+  },
+  {
+   "t": "dic",
+   "x": "Artículo 11.- Las armas, cargadores, municiones y materiales reservados para el uso exclusivo de la Fuerza Armada Permanente, son las siguientes:"
+  },
+  {
+   "t": "dic",
+   "x": "Se omite el resto del texto hasta la siguiente porción."
+  },
+  {
+   "t": "dic",
+   "x": "b).- Pistolas calibre 5.7 x 28 mm; .357\" en todas sus variantes; 9 mm. Parabellum, Luger y similares; .38\" Super y las de calibres superiores;"
+  },
+  {
+   "t": "dic",
+   "x": "Nota del texto oficial: párrafo e inciso reformados DOF 29-05-2025."
+  },
+  {
+   "t": "sub",
+   "x": "Artículo 83, encabezado y fracción II"
+  },
+  {
+   "t": "dic",
+   "x": "Artículo 83.- A la persona que, sin licencia vigente, porte un arma de las reservadas para el uso exclusivo de la Fuerza Armada Permanente, se le sancionará con:"
+  },
+  {
+   "t": "dic",
+   "x": "Se omite el resto del texto hasta la siguiente porción."
+  },
+  {
+   "t": "dic",
+   "x": "II.- Prisión de cinco a diez años y multa de cien a trescientas veces el valor diario de la Unidad de Medida y Actualización, cuando se trate de armas, sus piezas o componentes comprendidas en los incisos a) y b) del artículo 11 de esta Ley;"
+  },
+  {
+   "t": "dic",
+   "x": "Se omite el resto del texto hasta la siguiente porción."
+  },
+  {
+   "t": "dic",
+   "x": "Nota del texto oficial: artículo reformado DOF 08-02-1985, 03-01-1989, 22-07-1994, 24-12-1998, 05-11-2003, 29-05-2025."
+  },
+  {
+   "t": "dic",
+   "x": "El artículo 19 constitucional todavía nombra los delitos \"de uso exclusivo del Ejército, la Armada y la Fuerza Aérea\" al fijar la prisión preventiva oficiosa; la LFAFE ya habla de \"Fuerza Armada Permanente\". Es una diferencia de denominación que conviene tener presente al argumentar."
+  },
+  {
+   "t": "sub",
+   "x": "Estado de verificación"
+  },
+  {
+   "t": "tabla",
+   "x": [
+    [
+     "Ordenamiento",
+     "Estado",
+     "Qué falta"
+    ],
+    [
+     "CPEUM",
+     "Literal del PDF oficial (DOF 07-10-2026); porciones largas extraídas dos veces y coincidentes",
+     "En art. 20 A, los números romanos VI a IX se asignaron por el orden del documento"
+    ],
+    [
+     "CADH, art. 8",
+     "Literal CNDH, cotejado con Corte IDH",
+     "Dos comas difieren entre ambas fuentes; cotejar con el DOF (decreto promulgatorio de 1981) para un escrito"
+    ],
+    [
+     "PIDCP, art. 14",
+     "Literal OHCHR, una sola fuente",
+     "Segunda fuente"
+    ],
+    [
+     "CNPP",
+     "Literal del compilador mley.mx (último cotejo del sitio: 15-09-2026). Portada oficial: última reforma DOF 28-11-2025",
+     "Cotejo completo contra el PDF oficial. El texto oficial no pudo leerse aquí: se corta en el art. 110"
+    ],
+    [
+     "LFAFE",
+     "Literal del PDF oficial (DOF 29-05-2025); dos consultas coincidentes",
+     "Nada para el caso"
+    ]
+   ]
+  },
+  {
+   "t": "dic",
+   "x": "Advertencias sobre el CNPP:"
+  },
+  {
+   "t": "lista",
+   "x": [
+    "En los arts. 365 y 386 el compilador numera las fracciones con arábigos; aquí se presentan en romanos, como suele hacerlo el DOF. Verificar.",
+    "El art. 365 conserva denominaciones antiguas (\"Procurador General de la República\", \"Instituto Federal Electoral\", \"Asamblea Legislativa del Distrito Federal\"). Puede ser el texto vigente sin actualizar o un rezago del compilador. Verificar.",
+    "En algunos artículos la división en párrafos es aproximada (362, 363, 364, 369, 377)."
+   ]
+  },
+  {
+   "t": "dic",
+   "x": "Método: todos los textos se obtuvieron por consulta web, que pasa por un modelo resumidor; se pidieron segmentos literales y se unieron. Puede haber diferencias mínimas de comas, comillas o acentos. Por eso este documento es de estudio: para un escrito o una audiencia, el texto vale solo cotejado contra el oficial."
+  },
+  {
+   "t": "dic",
+   "x": "Para la charla, los arts. 373, 374 y 376 del CNPP se proyectan en pantalla: son los primeros que hay que cotejar."
+  }
+ ]
+}
