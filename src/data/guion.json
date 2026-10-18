@@ -1085,7 +1085,7 @@
    },
    {
     "t": "dic",
-    "x": "Les dejo el código para que prueben la app con el caso de hoy. Está cargada solo con el caso ficticio; por favor, no introduzcan datos de casos reales."
+    "x": "Les dejo el código para que prueben la app con el caso de hoy: contrapunto-six.vercel.app. Funciona en modo demostración, con las respuestas preparadas para este caso. Por favor, no introduzcan datos de casos reales."
    },
    {
     "t": "dic",
